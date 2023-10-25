@@ -11,8 +11,14 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@iconify/icons-heroicons-solid": "^1.2.6",
+    "@react-icons/all-files": "^4.1.0",
+    "heroicons": "^2.0.18",
+    "heroicons-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0",
     "react-router-dom": "^6.17.0"
   },
   "devDependencies": {
