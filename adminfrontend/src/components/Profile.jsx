@@ -8,6 +8,19 @@ const Profile = () => {
                     Profile
                 </p>
             </div>
+            <div className='flex items-center flex-col justify-around'>
+                <div className='w-6 bg-pink-500 rounded-full p-12 '>
+                </div>
+                <p class="text-xl p-3 font-medium text-gray-800 dark:text-white">
+                    Profile
+                </p>
+                <p class="text-xl p-3 font-medium text-gray-800 dark:text-white">
+                    Profile
+                </p>
+                <p class="text-xl p-3 font-medium text-gray-800 dark:text-white">
+                    Profile
+                </p>
+            </div>
 
 
 
