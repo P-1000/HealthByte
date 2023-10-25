@@ -1,5 +1,7 @@
 export function Pages() {
     return (
-        <></>
+        <>
+            
+        </>
     )
 }
