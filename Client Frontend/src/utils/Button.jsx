@@ -6,10 +6,10 @@ const NavBar = (props) => {
 
     return (
         <>
-        <h1>
-
+        <button className="  bg-black/30 ">
                     {someProp}
-        </h1>
+                </button>
+        
         </>
     );
 };

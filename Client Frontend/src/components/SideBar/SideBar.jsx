@@ -3,9 +3,9 @@ import NavBar from "./NavBar";
 export function SideBar() {
   return (
     <>
-    <div className="flex">
+    <div className="flex ">
 
-      <aside className="flex">
+      <aside className="flex ">
         <div className="flex flex-col items-center w-16 h-screen py-8 space-y-8 bg-white dark:bg-gray-900 dark:border-gray-700">
           <a href="#">
             <img
