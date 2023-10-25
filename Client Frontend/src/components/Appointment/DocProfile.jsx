@@ -1,48 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoMdSchool } from "react-icons/io";
 import { SiTransportforlondon } from "react-icons/si";
 import { FaLocationArrow } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import { AiOutlineStar } from "react-icons/ai";
-import {MdEventAvailable} from "react-icons/md";
+import { MdEventAvailable } from "react-icons/md";
 
 const DoctorProfile = () => {
-    const appointmentAvailability = {
-        Sunday: {
-          available: true,
-          timeSlots: '9:00 AM - 4:30 Pm'
-        },
-        Monday: {
-          available: true,
-          timeSlots: '9:00 AM - 4:30 Pm'
-        },
-        Tuesday: {
-          available: true,
-          timeSlots: '9:00 AM - 4:30 Pm'
-        },
-        Wednesday: {
-          available: true,
-          timeSlots: '9:00 AM - 4:30 Pm'
-        },
-        Thursday: {
-          available: true,
-          timeSlots: '9:00 AM - 4:30 Pm'
-        },
-        Friday: {
-          available: false,
-          timeSlots: ''
-        },
-        Saturday: {
-          available: false, // Example: The dermatologist doesn't work on Saturdays
-          timeSlots: [],
-        },
-      };
-      
-      
+  const appointmentAvailability = {
+    Sunday: {
+      available: true,
+      timeSlots: "9:00 AM - 4:30 Pm",
+    },
+    Monday: {
+      available: true,
+      timeSlots: "9:00 AM - 4:30 Pm",
+    },
+    Tuesday: {
+      available: true,
+      timeSlots: "9:00 AM - 4:30 Pm",
+    },
+    Wednesday: {
+      available: true,
+      timeSlots: "9:00 AM - 4:30 Pm",
+    },
+    Thursday: {
+      available: true,
+      timeSlots: "9:00 AM - 4:30 Pm",
+    },
+    Friday: {
+      available: false,
+      timeSlots: "",
+    },
+    Saturday: {
+      available: false, // Example: The dermatologist doesn't work on Saturdays
+      timeSlots: [],
+    },
+  };
+
+  const [showOnlineAvailability, setShowOnlineAvailability] = useState(false);
 
   return (
     <div>
-      <section className="bg-white dark:bg-gray-900 rounded-3xl px-1 mx-4">
+      <section className=" dark:bg-gray-900 rounded-3xl px-1 mx-4">
         <div className="container px-6 py-3 mx-auto">
           <div className="w-[90vw]">
             {/* disney grad bro  */}
@@ -87,7 +87,12 @@ const DoctorProfile = () => {
                   </div>
                   <div className="w-6/12 py-1 mb-1">
                     <h1 className="inline-block text-white/90 text-sm font-normal">
-                    With over 15 years of experience, Dr. Martinez has worked at renowned dermatology clinics and hospitals, including Dermatology Excellence Center and Glowing Skin Clinic. Her expertise covers a wide range of dermatological conditions, from acne and psoriasis to skin cancer screenings.
+                      With over 15 years of experience, Dr. Martinez has worked
+                      at renowned dermatology clinics and hospitals, including
+                      Dermatology Excellence Center and Glowing Skin Clinic. Her
+                      expertise covers a wide range of dermatological
+                      conditions, from acne and psoriasis to skin cancer
+                      screenings.
                     </h1>
                   </div>
                   <div className="flex gap-5 pb-5 mt-2">
@@ -99,10 +104,10 @@ const DoctorProfile = () => {
                       <AiOutlineStar className="inline-block text-white/90 text-lg" />
                     </div>
                     <div>
-                        <h1 className="inline-block text-white/90 text-sm font-normal">
-                          <MdEventAvailable className="inline-block text-white/90 text-lg" />
-                            {" "}Available Today.
-                        </h1>
+                      <h1 className="inline-block text-white/90 text-sm font-normal">
+                        <MdEventAvailable className="inline-block text-white/90 text-lg" />{" "}
+                        Available Today.
+                      </h1>
                     </div>
                   </div>
                   <div className="flex gap-2  mt-7">
@@ -130,25 +135,96 @@ const DoctorProfile = () => {
           </div>
         </div>
       </section>
-    <div>
-    <div className="p-2 px-3 w-4/12">
-     <h1 className="px-8 text-md font-light">
-     Appointment Availability:
-     </h1>
-     <div>
-        <div className="border">
-         {
-            
-         }
+      <div className=" flex gap-6">
+        <div className="p-2 px-6 mx-10 w-4/12 border rounded-md bg-white bg-opacity-70">
+          <h1 className="px-2 text-md font-semibold">
+            Appointment Availability:
+          </h1>
+          <div className="divide-y divide-gray-300">
+            {Object.keys(appointmentAvailability).map((day) => (
+              <div
+                key={day}
+                className={`py-3 px-2 ${
+                  appointmentAvailability[day].available
+                    ? "bg-green-100/10"
+                    : "bg-red-100/10"
+                } hover:bg-blue-100 cursor-pointer`}
+              >
+                <h2 className="text-xl font-semibold mb-2">{day}</h2>
+                <p>
+                  {appointmentAvailability[day].available ? (
+                    <span className="text-green-500 font-semibold">
+                      {appointmentAvailability[day].timeSlots
+                        ? appointmentAvailability[day].timeSlots
+                        : "Not Available"}
+                    </span>
+                  ) : (
+                    <span className="text-red-500 font-semibold">
+                      Not Available
+                    </span>
+                  )}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 text-center">
+            <button
+              className="bg-blue-500 text-white font-semibold px-4 py-2 rounded-md"
+              onClick={() => setShowOnlineAvailability(!showOnlineAvailability)}
+            >
+              Online Availability
+            </button>
+            {showOnlineAvailability && (
+              <div className="mt-4 text-center">
+                <p className="text-xl font-semibold mb-2">
+                  Online Availability
+                </p>
+                <p>Display online availability information here.</p>
+              </div>
+            )}
+          </div>
         </div>
-     </div>
-      </div>
 
-      {/* new section  */}
-      <div className="w-8/12">
-
+        {/* new section  */}
+        <div className="w-8/12 mt-2">
+          <div className="flex divide-x-2">
+            <div>
+              <h1 className="text-xl font-semibold border-b w-fit mb-3"> Services Offered:</h1>
+              {/* <p className='w-[50%] px-1 py-2'>Dr. Martinez offers a comprehensive suite of dermatological services, including:</p> */}
+              <div className="flex flex-wrap w-[28rem] gap-2">
+                <p className="border rounded-full w-fit px-4 py-1 text-center">
+                  Acne Treatment
+                </p>
+                <p className="border rounded-full w-fit px-4 py-1 text-center">
+                  Botox and Dermal Fillers
+                </p>
+                <p className="border rounded-full w-fit px-4 py-1 text-center">
+                  Psoriasis Management
+                </p>
+                <p className="border rounded-full w-fit px-4 py-1 text-center">
+                  Eczema Care
+                </p>
+                <p className="border rounded-full w-fit px-4 py-1 text-center">
+                  Laser Skin Resurfacing
+                </p>
+                <p className="border rounded-full w-fit px-4 py-1 text-center">
+                  Skin Cancer Screening
+                </p>
+              </div>
+            </div>
+            <div className="px-4">
+              <h1 className="text-xl font-semibold border-b w-fit mb-3">
+              Contact Information:
+              </h1>
+              <div className="mt-2 mx-1">
+             <h3 className="font-light"> Email: dr.elizabethmartinez@example.com</h3>
+              <h3 className="font-light"> Phone: +1 234 567 890</h3>
+              <h3 className="font-light">Website : www.nexample.com</h3>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
   );
 };
