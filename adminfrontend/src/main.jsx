@@ -1,13 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { StateContextProvider } from "./context/index";
 import App from './App.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <ThirdwebProvider
+  activeChain="goerli"
+      >
     <BrowserRouter>
-      <App />
+      <StateContextProvider>
+        <App />
+      </StateContextProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+    </ThirdwebProvider>,
 )

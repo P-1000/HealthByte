@@ -12,14 +12,15 @@ const Profile = () => {
                 <div className='w-6 bg-pink-500 rounded-full p-12 '>
                 </div>
                 <p class="text-xl p-3 font-medium text-gray-800 dark:text-white">
-                    Profile
+                    Dr. James Clear, MBBS
                 </p>
                 <p class="text-xl p-3 font-medium text-gray-800 dark:text-white">
                     Profile
                 </p>
-                <p class="text-xl p-3 font-medium text-gray-800 dark:text-white">
-                    Profile
-                </p>
+                <div className="flex">
+                    <button className='bg-white px-2 py-1 rounded-lg m-1'>View profile</button>
+                    <button className='bg-white px-2 py-1 rounded-lg m-1'>View</button>
+                </div>
             </div>
 
 

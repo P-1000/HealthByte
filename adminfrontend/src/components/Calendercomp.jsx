@@ -24,10 +24,10 @@ const Calendercomp = () => {
         </span>
         <div class="flex items-center justify-between w-full ml-2">
             <p>
-                Grooming with Alicia
+                Skin Care 
             </p>
             <p>
-                22.07
+                10:8
             </p>
         </div>
     </div>
