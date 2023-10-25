@@ -5,6 +5,7 @@ import { FaLocationArrow } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import { AiOutlineStar } from "react-icons/ai";
 import { MdEventAvailable } from "react-icons/md";
+import Modal from "./Modal";
 
 const DoctorProfile = () => {
   const appointmentAvailability = {
@@ -111,13 +112,14 @@ const DoctorProfile = () => {
                     </div>
                   </div>
                   <div className="flex gap-2  mt-7">
-                    <button
+                    {/* <button
                       className="bg-[#0d0d0d] border transition-all hover:px-10
                     delay-100 duration-300 ease-in-out
                      hover:bg-white hover:text-black text-white px-4 py-2 rounded-md"
                     >
                       Book Video Consultation
-                    </button>
+                    </button> */}
+                    <Modal/>
                     <button className="bg-white border delay-100 duration-300 ease-in-out hover:px-8 text-black transition-all hover:bg-black hover:text-white  px-4 py-2 rounded-md">
                       Book Hospital Visit
                     </button>
@@ -220,11 +222,13 @@ const DoctorProfile = () => {
              <h3 className="font-light"> Email: dr.elizabethmartinez@example.com</h3>
               <h3 className="font-light"> Phone: +1 234 567 890</h3>
               <h3 className="font-light">Website : www.nexample.com</h3>
+          
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   );
 };
