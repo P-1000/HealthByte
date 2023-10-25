@@ -3,6 +3,8 @@ import "./App.css";
 import { SideBar } from "./components/SideBar/SideBar.jsx";
 import DashBoard from "./pages/DashBoard.jsx";
 import MainApp from "./components/Appointment/MainApp";
+import AppointmentMain from "./pages/AppointmentMain";
+import Doctor from "./pages/Doctor";
 
 function App() {
   return (
@@ -12,7 +14,8 @@ function App() {
           <SideBar />
           <Routes>
             <Route path="/" element={<DashBoard />} />
-            <Route path="/doctorapp" element={<MainApp />} />
+            <Route path="/doctor-appointment" element={<AppointmentMain/>} />
+            <Route path="/doctor/:id" element={<Doctor/>} />
           </Routes>
         </div>
       </Router>
