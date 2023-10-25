@@ -7,9 +7,6 @@ function App() {
 
   return (
     <>
-   {/* <div>
-    <SideBar/>
-   </div> */}
    <Router>
    <SideBar/>
    <Routes>
