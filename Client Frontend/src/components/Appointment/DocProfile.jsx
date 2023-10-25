@@ -7,6 +7,38 @@ import { AiOutlineStar } from "react-icons/ai";
 import {MdEventAvailable} from "react-icons/md";
 
 const DoctorProfile = () => {
+    const appointmentAvailability = {
+        Sunday: {
+          available: true,
+          timeSlots: '9:00 AM - 4:30 Pm'
+        },
+        Monday: {
+          available: true,
+          timeSlots: '9:00 AM - 4:30 Pm'
+        },
+        Tuesday: {
+          available: true,
+          timeSlots: '9:00 AM - 4:30 Pm'
+        },
+        Wednesday: {
+          available: true,
+          timeSlots: '9:00 AM - 4:30 Pm'
+        },
+        Thursday: {
+          available: true,
+          timeSlots: '9:00 AM - 4:30 Pm'
+        },
+        Friday: {
+          available: false,
+          timeSlots: ''
+        },
+        Saturday: {
+          available: false, // Example: The dermatologist doesn't work on Saturdays
+          timeSlots: [],
+        },
+      };
+      
+      
 
   return (
     <div>
@@ -105,7 +137,9 @@ const DoctorProfile = () => {
      </h1>
      <div>
         <div className="border">
-         
+         {
+            
+         }
         </div>
      </div>
       </div>
