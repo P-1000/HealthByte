@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Button from '../../utils/Button.jsx';
+import Button from '../../utils/Button.jsx';
 import Example from '../../utils/HeadlessUi/Pop.jsx';
 
 const NavBar = (props) => { // Accept props as an argument
@@ -8,15 +8,10 @@ const NavBar = (props) => { // Accept props as an argument
   
   return (
     <>
-      <div>
-        <div>
-          {/* You can use the props here */}
-
-          {/* <Button someProp="bala" />
-          <Button someProp="bala" />
-            <Button someProp="bala" />
-            <Button someProp="bala" />
-          <Example/>     */}
+      <div className=' relative '>
+        <div className='absolute inset-9 ml-[650px]'>
+          <Button someProp="Donate Blood" />
+          {/* <Example/>     */}
         </div>
       </div>
     </>

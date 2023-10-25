@@ -14,7 +14,7 @@ import eldercare from "../../assets/couple.png";
 const BrowseByCon = () => {
   return (
     <div>
-        <h1 className="mt-12 ml-5 text-2xl ">Browse By Health Conditaion</h1>
+      <h1 className="mt-12 ml-5 text-2xl ">Browse By Health Conditaion</h1>
       <div className="flex  mt-5 flex-col gap-5">
         <div className="flex gap-5">
           <Condition name={"Diabetes Care"} imgsrc={diabetes} />
