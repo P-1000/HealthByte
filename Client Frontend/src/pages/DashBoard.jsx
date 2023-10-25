@@ -2,14 +2,12 @@ import React from "react";
 // import BsChevronRight from "react-icons/bs";
 import { FaChevronRight } from "react-icons/fa";
 import BrowseByCon from "../components/HealthCondition/BrowseByCon";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const DashBoard = () => {
   const navigate = useNavigate();
 
-  const handleNav = (path) => () => {
-    navigate(path);
-  };
+
 
   return (
     <div className="pl-10 pt-5">
@@ -94,8 +92,8 @@ const DashBoard = () => {
                 <FaChevronRight className="  opacity-70" />
               </div>
 
+              <Link to="/doctor-appointment">
               <div
-              onClick={handleNav("doctor-appointment")} 
               className="hover:scale-[1.05] transition-all cursor-pointer shadow-md flex gap-4 w-72 h-20  rounded-xl  bg-orange-100 justify-evenly items-center ">
                 <img
                   className="w-9 h-9 "
@@ -108,6 +106,7 @@ const DashBoard = () => {
                 </div>
                 <FaChevronRight className="  opacity-70" />
               </div>
+              </Link>
             </div>
           </div>
         </div>
