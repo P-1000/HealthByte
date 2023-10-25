@@ -8,6 +8,7 @@ const StateContext = createContext();
 export const StateContextProvider = ({children}) => {
     const {contract} = useContract('0x7e46e639613095F29C67B2AaB043d8b7684cFBD1');
     const {mutateAsync: createCampaign} = useContractWrite(contract, 'createCampaign');
+    const { mutateAsync: donateToCampaign, isLoading } = useContractWrite(contract, "donateToCampaign")
     const address = useAddress();
     // const connect = useMetamask();
 
@@ -52,11 +53,12 @@ export const StateContextProvider = ({children}) => {
     }
     const donate = async (pId, amount) => {
         const data = await contract.call('donateToCampaign',pId, {value: ethers.utils.parseEther(amount)});
+        // const data = await donateToCampaign({ args: [pId,  ethers.utils.parseEther(amount)] });
 
         return data;
     }
-    const getDonations = async (pId) => {
-        const donations = await contract.call('getDonators', pId);
+    const getDonations = async (_id) => {
+        const { donations, isLoading } = useContractRead(contract, "getDonators", [_id])
         const numberOfDonations = donations[0].length;
 
         const parsedDonations = [];

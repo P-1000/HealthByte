@@ -11,6 +11,7 @@ import Profile from './components/Profile';
 import Funding from './pages/Funding';
 import Dashboard from './pages/Dashboard';
 import CreateCampaign from './pages/CreateCampaign';
+import CampaignDetails from './pages/CampaignDetails';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/funding" element={<Funding />} />
         <Route path="/newcampaign" element={<CreateCampaign />} />
+          <Route path="/campaign-details/:id" element={<CampaignDetails/>} />
       </Routes>
     </>
   )
