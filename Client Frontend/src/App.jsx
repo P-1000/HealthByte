@@ -8,7 +8,10 @@ function App() {
 
   return (
     <>
-    <h1 className=""> hey</h1>
+   <div>
+        <h1>React + Vite + Tailwind CSS</h1>
+
+   </div>
     </>
   )
 }
