@@ -42,7 +42,7 @@ const DoctorProfile = () => {
 
   return (
     <div>
-      <section className=" dark:bg-gray-900 rounded-3xl px-1 mx-4">
+      <section className="  rounded-3xl px-1 mx-4">
         <div className="container px-6 py-3 mx-auto">
           <div className="w-[90vw]">
             {/* disney grad bro  */}
