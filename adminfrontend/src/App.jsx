@@ -18,6 +18,7 @@ import Cart from './pages/Cart';
 import Blog from './pages/Blog';
 import MealPlan from './pages/MealPlan';
 import Donate from './pages/Donate';
+import Appointments from './pages/Appointments';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/medico/product/:id" element={<ProductDetails />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/meal" element={<MealPlan />} />
+        <Route path="/appointments" element={<Appointments />} />
         <Route path="/donate" element={<Donate />} />
       </Routes>
     </>
