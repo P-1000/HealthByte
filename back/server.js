@@ -13,9 +13,12 @@ const PORT = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
+
+
+
 const connect = () =>{
     console.log("waiting for the Db")
-    mongoose.connect('mongodb://localhost:27017/').then(()=>{
+    mongoose.connect('mongodb+srv://earnvpn:UdzNhOJgMplywSNd@cluster0.svqljh0.mongodb.net/?retryWrites=true&w=majority').then(()=>{
         console.log("Database connected")
     }).catch(err => {throw err})
 }
