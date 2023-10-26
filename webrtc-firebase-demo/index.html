@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/1590b60672.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <title>WebRTC Demo</title>
+  </head>
+  <body>
+    <div class="top flex justify-center items-center">
+      <div class="videos flex-col">
+        <span id="local" class="relative">
+          <video id="webcamVideo" class="disabledVid" autoplay playsinline>
+            mani
+          </video>
+          <span class="left-[50%] top-[50%]"
+            ><i class="fas fa-video-slash fa-xl"></i
+          ></span>
+        </span>
+        <span id="remote">
+          <video id="remoteVideo" autoplay playsinline></video>
+        </span>
+        <div class="btmNav absolute bottom-6 w-full">
+          <button id="webcamButton" class="btn btn-success cursor-pointer">
+            <i class="fas fa-video fa-xl"></i>
+          </button>
+          <button id="hangupButton" class="btn btn-danger cursor-pointer">
+            <i class="fa-solid fa-phone-slash fa-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="sideBar text-start">
+        <div class="docProfile flex items-center">
+          <div class="profileLogo relative">
+            <img
+              class="object-cover w-16 h-16 rounded-full"
+              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&h=764&q=100"
+              alt="pic"
+            />
+            <span
+              class="absolute bottom-0 w-3 h-3 rounded-full bg-emerald-500 right-1 ring-1 ring-white"
+            ></span>
+          </div>
+          <div class="details ml-4 flex flex-col">
+            <h1 class="text-xl font-semibold text-gray-700 capitalize">
+              Dr.Mounika Chauhan
+            </h1>
+            <p class="text-base text-gray-500 dark:text-gray-400">
+              Cardiologist
+            </p>
+          </div>
+        </div>
+        <div class="sideNav m-4 flex">
+          <div>
+            <span>Info</span>
+            <span id="info" class="bar active"></span>
+          </div>
+          <div>
+            <span>Prescription</span>
+            <span id="prescription" class="bar"></span>
+          </div>
+          <div>
+            <span>Files</span>
+            <span id="file" class="bar"></span>
+          </div>
+          <div>
+            <span>Reports</span>
+            <span id="report" class="bar"></span>
+          </div>
+        </div>
+        <div class="sideDetails m-2 p-2">
+        </div>
+      </div>
+    </div>
+
+    <button
+      id="callButton"
+      disabled
+      class="bg-emerald-200 px-3 py-2 rounded-lg cursor-pointer"
+    >
+      Create Call (offer)
+    </button>
+
+    <p>Join Call:</p>
+    <br />
+
+    <input id="callInput" class="border border-gray-600 rounded-lg" />
+    <button
+      id="answerButton"
+      disabled
+      class="bg-emerald-200 px-3 py-2 rounded-lg cursor-pointer"
+    >
+      Answer
+    </button>
+
+    <div
+      class="confirm hidden relative z-10"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div
+                  class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10"
+                >
+                  <svg
+                    class="h-6 w-6 text-red-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                    />
+                  </svg>
+                </div>
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                  <h3
+                    class="text-base font-semibold leading-6 text-gray-900"
+                    id="modal-title"
+                  >
+                    Leave Video Call
+                  </h3>
+                  <div class="mt-2">
+                    <p class="text-sm text-gray-500">
+                      Are you sure you want to leave?
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                id="confirm"
+                class="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
+              >
+                Confirm
+              </button>
+              <button
+                type="button"
+                id="cancel"
+                class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="success hidden relative z-10"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-0">
+              <div class="sm:flex sm:items-start">
+                <div
+                  class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-emerald-100 sm:mx-0 sm:h-10 sm:w-10"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    class="w-6 h-6 text-emerald-500"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                  <h3
+                    class="text-base font-semibold leading-6 text-gray-900"
+                    id="modal-title"
+                  >
+                    Thank you 
+                  </h3>
+                  <div class="mt-2">
+                    <p class="text-sm text-gray-500">
+                      Go to Dashboard
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                id="dashboard"
+                class="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
+              >
+                Dashboard
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/mine.js"></script>
+  </body>
+</html>

@@ -1,69 +1,85 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+body{
+    font-family: 'Onest', sans-serif;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/*
+  Based on TailwindCSS recommendations,
+  consider using classes instead of the `@apply` directive
+  @see https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction
+*/
+/* body {
+    @apply transition-[1s] m-0 p-0;
+    background: #ddd;
+    font-family: "Lato", sans-serif;
+  } */
+  .item {
+    
+    background: #fff;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
   }
-  a:hover {
-    color: #747bff;
+  .item .img-box {
+   
+    -webkit-box-sizing: border-box;
   }
-  button {
-    background-color: #f9f9f9;
+  .item .img-box img {
   }
-}
+  .details {
+    
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  .details h2 {
+    
+  }
+  .details h2 span {
+    
+  }
+  .details .price {
+    
+  }
+  label {
+    
+  }
+  ul {
+    
+    display: -webkit-flex;
+    display: -ms-flex;
+  }
+  ul li {
+    
+    list-style: none;
+  }
+  ul.colors li {
+    @apply w-4 h-4 cursor-pointer rounded-[50%] hover:shadow-[1px_1px_1px_rgba(0,0,0,0.5)];
+  }
+  ul.colors li:nth-child(1) {
+    background: #9f8a42;
+  }
+  ul.colors li:nth-child(2) {
+    background: #acaea9;
+  }
+  ul.colors li:nth-child(3) {
+    background: #cd7f32;
+  }
+  a {
+    
+    /* background: #333; */
+  }
+  /* a:hover {
+    background: #666;
+  } */
+  .item:hover .details {
+    
+  }
+  .item:hover .img-box {
+    
+  }
+  .item:hover h2,
+  .item:hover .price {
+    @apply pt-5 pb-0;
+  }
+  
