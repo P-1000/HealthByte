@@ -1,0 +1,164 @@
+{
+  "medicines": [
+    {
+      "id": 1,
+      "name": "Aspirin",
+      "description": "Pain reliever and anti-inflammatory medication",
+      "amount": 5.99,
+      "imageURL": "https://example.com/aspirin.jpg",
+      "category": "Pain Relief"
+    },
+    {
+      "id": 2,
+      "name": "Ibuprofen",
+      "description": "Nonsteroidal anti-inflammatory drug (NSAID)",
+      "amount": 6.49,
+      "imageURL": "https://example.com/ibuprofen.jpg",
+      "category": "Pain Relief"
+    },
+    {
+      "id": 3,
+      "name": "Paracetamol",
+      "description": "Fever and pain reducer",
+      "amount": 4.99,
+      "imageURL": "https://example.com/paracetamol.jpg",
+      "category": "Pain Relief"
+    },
+    {
+      "id": 4,
+      "name": "Loratadine",
+      "description": "Antihistamine for allergy relief",
+      "amount": 7.99,
+      "imageURL": "https://example.com/loratadine.jpg",
+      "category": "Allergy"
+    },
+    {
+      "id": 5,
+      "name": "Omeprazole",
+      "description": "Proton pump inhibitor for heartburn",
+      "amount": 8.49,
+      "imageURL": "https://example.com/omeprazole.jpg",
+      "category": "Gastrointestinal"
+    },
+    {
+      "id": 6,
+      "name": "Amoxicillin",
+      "description": "Antibiotic for bacterial infections",
+      "amount": 12.99,
+      "imageURL": "https://example.com/amoxicillin.jpg",
+      "category": "Antibiotics"
+    },
+    {
+      "id": 7,
+      "name": "Cetirizine",
+      "description": "Antihistamine for allergy relief",
+      "amount": 6.99,
+      "imageURL": "https://example.com/cetirizine.jpg",
+      "category": "Allergy"
+    },
+    {
+      "id": 8,
+      "name": "Simvastatin",
+      "description": "Statins for lowering cholesterol",
+      "amount": 9.99,
+      "imageURL": "https://example.com/simvastatin.jpg",
+      "category": "Cardiovascular"
+    },
+    {
+      "id": 9,
+      "name": "Metformin",
+      "description": "Oral medication for type 2 diabetes",
+      "amount": 7.49,
+      "imageURL": "https://example.com/metformin.jpg",
+      "category": "Diabetes"
+    },
+    {
+      "id": 10,
+      "name": "Amlodipine",
+      "description": "Calcium channel blocker for hypertension",
+      "amount": 8.99,
+      "imageURL": "https://example.com/amlodipine.jpg",
+      "category": "Cardiovascular"
+    },
+    {
+      "id": 11,
+      "name": "Vitamin C",
+      "description": "Essential vitamin for immune support",
+      "amount": 3.99,
+      "imageURL": "https://example.com/vitamin-c.jpg",
+      "category": "Vitamins"
+    },
+    {
+      "id": 12,
+      "name": "Acetazolamide",
+      "description": "Carbonic anhydrase inhibitor for glaucoma",
+      "amount": 10.49,
+      "imageURL": "https://example.com/acetazolamide.jpg",
+      "category": "Ophthalmic"
+    },
+    {
+      "id": 13,
+      "name": "Hydrochlorothiazide",
+      "description": "Diuretic for high blood pressure",
+      "amount": 7.49,
+      "imageURL": "https://example.com/hydrochlorothiazide.jpg",
+      "category": "Cardiovascular"
+    },
+    {
+      "id": 14,
+      "name": "Lisinopril",
+      "description": "Angiotensin-converting enzyme (ACE) inhibitor",
+      "amount": 6.99,
+      "imageURL": "https://example.com/lisinopril.jpg",
+      "category": "Cardiovascular"
+    },
+    {
+      "id": 15,
+      "name": "Fluconazole",
+      "description": "Antifungal medication",
+      "amount": 8.99,
+      "imageURL": "https://example.com/fluconazole.jpg",
+      "category": "Antifungals"
+    },
+    {
+      "id": 16,
+      "name": "Salbutamol",
+      "description": "Bronchodilator for asthma",
+      "amount": 9.49,
+      "imageURL": "https://example.com/salbutamol.jpg",
+      "category": "Respiratory"
+    },
+    {
+      "id": 17,
+      "name": "Metoprolol",
+      "description": "Beta-blocker for heart conditions",
+      "amount": 7.99,
+      "imageURL": "https://example.com/metoprolol.jpg",
+      "category": "Cardiovascular"
+    },
+    {
+      "id": 18,
+      "name": "Naproxen",
+      "description": "Nonsteroidal anti-inflammatory drug (NSAID)",
+      "amount": 6.49,
+      "imageURL": "https://example.com/naproxen.jpg",
+      "category": "Pain Relief"
+    },
+    {
+      "id": 19,
+      "name": "Ciprofloxacin",
+      "description": "Broad-spectrum antibiotic",
+      "amount": 12.99,
+      "imageURL": "https://example.com/ciprofloxacin.jpg",
+      "category": "Antibiotics"
+    },
+    {
+      "id": 20,
+      "name": "Lorazepam",
+      "description": "Anxiety medication",
+      "amount": 8.49,
+      "imageURL": "https://example.com/lorazepam.jpg",
+      "category": "Mental Health"
+    }
+  ]
+}
