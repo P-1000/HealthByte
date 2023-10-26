@@ -19,6 +19,7 @@ import Blog from './pages/Blog';
 import MealPlan from './pages/MealPlan';
 import Donate from './pages/Donate';
 import Appointments from './pages/Appointments';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/funding" element={<Funding />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/newcampaign" element={<CreateCampaign />} />
         <Route path="/campaign-details/:id" element={<CampaignDetails />} />
         <Route path="/medico" element={<Ecom />} />
