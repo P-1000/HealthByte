@@ -1,38 +1,49 @@
 import React from "react";
 
-const ProductCard = ({ name, price, develi }) => {
+const ProductCard = ({ product }) => {
+  const { image, name, price, brand , category } = product;
+
   return (
-    <div className="item group  absolute bg-[#fff] w-56 h-[300px] shadow-[0_5px_15px_rgba(0,0,0,0.25)] overflow-hidden transition-[1s] rounded-xl ">
-        
-    <div className="img-box rounded-xl h-full  w-32  box-border transition-[1s] ">
-      <img
-        className="rounded-2xl  w-32 h-[80%] object-contain group-hover:absolute group-hover:transition-[3s] group-hover:bottom-[150px] block transition-[1s] mx-auto my-0 "
-        src="https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/4f52de3934a24db98550be0e08ab6044.jpg"
-        alt="Awesome Sunglasses"
-      />
-    </div>
-    <div className="bg-white group-hover:overflow-visible group-hover:shadow-[0_5px_15px_rgba(0,0,0,0.25)] group-hover:transition-[1s] group-hover:bottom-0 absolute bottom-[-125px] w-full box-border shadow-[0_0_0_rgba(0,0,0,0)] transition-[1s] pt-0 p-2.5">
-      <h2 className="w-full text-base m-0 pb-[25px] p-0">
-        {name}
-        <br />
-        <span className="text-xs text-[#bbb] font-[normal]">Men's Collection</span>
-      </h2>
-      <div className="absolute font-[bold] text-xl right-[10px] top-0">{price}</div>
-      <label className="text-sm">
-        Delivery by<b> {develi}</b>
-      </label>
-      <h2 className="text-sm">bottle of 60 capsules</h2>
-      <a
-        className="block bg-[#333] text-white text-center no-underline transition-[1s] mt-[15px] mb-0 mx-0 p-[5px] rounded-[5px] hover:transition-[1s]"
-        href="#"
-      >
-        Add to cart
+    <div className="relative m-1  p-2 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+      <a href="#" className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl">
+        <img className="object-cover" src={image} alt="product image" />
+        <span className="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">
+          {brand}
+        </span>
       </a>
+      <div className="mt-5 mx-3 px-3 pb-1 ">
+        <a href="#">
+          <h5 className="tet-xl tracking-tight text-slate-900">{name}</h5>
+          <span className="text-md font-light text-slate-900/80">{category}</span>
+        </a>
+        <div className="mt-2 mb-5 flex items-center justify-between">
+          <p>
+            <span className="text-3xl font-bold text-slate-900">{price}</span>
+
+          </p>
+          <a
+            href="#"
+            className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="mr-2 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            Add to cart
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-
-
-
   );
 };
 
