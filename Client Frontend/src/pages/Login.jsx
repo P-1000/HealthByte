@@ -196,7 +196,7 @@ const Login = () => {
         await axios
           .post("http://localhost:3000/api/book/login", { usermain })
           .then((res) => {
-            console.log(res.data);
+            console.log(res);
           })
           .catch((err) => {
             console.log(err);
