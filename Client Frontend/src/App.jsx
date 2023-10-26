@@ -6,21 +6,26 @@ import MainApp from "./components/Appointment/MainApp";
 import AppointmentMain from "./pages/AppointmentMain";
 import Doctor from "./pages/Doctor";
 import Ecommerce from "./pages/Ecommerce";
+import Login from "./pages/Login";
+import { useLocation } from "react-router-dom";
 
 function App() {
+  const location = useLocation();
+
   return (
     <>
-      <Router>
+      {/* <Router> */}
         <div className="flex">
-          <SideBar />
+          {location.pathname === "/" ? <Login /> : <SideBar />}
+          {/* <SideBar /> */}
           <Routes>
-            <Route path="/" element={<DashBoard />} />
-            <Route path="/doctor-appointment" element={<AppointmentMain/>} />
-            <Route path="/doctor/:id" element={<Doctor/>} />
+            <Route path="/home" element={<DashBoard />} />
+            <Route path="/doctor-appointment" element={<AppointmentMain />} />
+            <Route path="/doctor/:id" element={<Doctor />} />
             <Route path="/buy-medico" element={<Ecommerce />} />
           </Routes>
         </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }
