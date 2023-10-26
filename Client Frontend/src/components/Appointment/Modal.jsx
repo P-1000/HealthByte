@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import axios from "axios";
 
-export default function Modal() {
+export default function Modal(props) {
   const [showModal, setShowModal] = useState(false);
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
@@ -13,6 +13,8 @@ export default function Modal() {
     setSelectedSlot(slotKey);
     setSelectedSlotPrice(price);
   };
+
+  const idk = props.keyid
 
   // Function to generate available slots and their prices based on the selected date
   const generateSlots = () => {
@@ -60,7 +62,7 @@ export default function Modal() {
   const handleSaveChanges = () => {
     // Replace the placeholders with actual patient ID and doctor ID
     const patientId = "abc";
-    const doctorId = "bca";
+    const doctorId = idk;
     
     console.log("Patient ID:", patientId);
     console.log("Doctor ID:", doctorId);
