@@ -1,19 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import { SideBar } from "./components/SideBar/SideBar.jsx";
+import DashBoard from "./pages/DashBoard.jsx";
+import MainApp from "./components/Appointment/MainApp";
+import AppointmentMain from "./pages/AppointmentMain";
+import Doctor from "./pages/Doctor";
+import Ecommerce from "./pages/Ecommerce";
+import Login from "./pages/Login";
+import { useLocation } from "react-router-dom";
+import ProfilePage from "./pages/Profile";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const location = useLocation();
 
   return (
     <>
-   <div>
-        <h1>React + Vite + Tailwind CSS</h1>
-
-   </div>
+      {/* <Router> */}
+        <div className="flex">
+          {location.pathname === "/" ? <Login /> : <SideBar />}
+          {/* <SideBar /> */}
+          <Routes>
+            <Route path="/home" element={<DashBoard />} />
+            <Route path="/doctor-appointment" element={<AppointmentMain />} />
+            <Route path="/doctor/:id" element={<Doctor />} />
+            <Route path="/buy-medico" element={<Ecommerce />} />
+            <Route path="/profile" element={<ProfilePage />} />
+          </Routes>
+        </div>
+      {/* </Router> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
