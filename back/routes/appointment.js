@@ -107,6 +107,40 @@ router.post('/doctorsignup', async (req, res) => {
   })
 
 
+  router.post('/doctorlogin', async (req, res) => {
+    try {
+      const { data } = req.body;
+  
+      if (!data || !data.username || !data.password) {
+        return res.status(400).json({ message: "Username and password are required" });
+      }
+  
+      const doc = await Doctor.findOne({ username: data.username }).select('+password');
+  
+      if (!doc) {
+        return res.status(401).json({ message: 'Invalid credentials' });
+      }
+  
+      // Compare the provided password with the hashed password stored in the database
+      const isPasswordCorrect = data.password === doc.password;
+  
+      if (!isPasswordCorrect) {
+        return res.status(401).json({ message: 'Invalid credentials' });
+      }
+  
+      // If the password is correct, generate a JWT token
+      const token = await jwt.sign({ id: doc._id }, 'yowaimo', { expiresIn: '10d' });
+      res.status(200).json({ token });
+    } catch (error) {
+      res.status(500).json({ message: 'Something went wrong' });
+    }
+  });
+  
+  
+  
+
+
+
 
 
 export default router;
