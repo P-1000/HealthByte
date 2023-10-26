@@ -1,5 +1,8 @@
 import express from "express"
 import user from "../models/user.js"
+import mongoose from "mongoose";
+import jwt from "jsonwebtoken";
+
 
 const router = express.Router()
 
@@ -18,35 +21,30 @@ router.post('/newapp' , (req,res) => {
 }
 )
 
-router.post("/login", (req,res) => {
-    const {uid , email , name , phonenumber} = req.body
+router.post("/login", async (req,res) => {
+    const {usermain} = req.body
     try {
-        if(!uid || !email || !name || !phonenumber){
-            return res.status(400).json({message:"All fields are required"})
+        if(!usermain.uid){
+            res.send(400).json({message:"All fields are required"})
         }
-        const token = jwt.sign({_id:savedUser._id},"heybro")
-        user.findOne({email}).then((savedUser) => {
-            if(savedUser){
-                return token;
-            }
+        const user = await user.findOne({uid:usermain.uid})
+        const jwt = jwt.sign({id:user._id},'yowaimo' , {expiresIn:"10d"})
+        if(user){
+            return res.status(200).json(jwt)
+        }
+        else{
+            const newuser = await new user(usermain)
+            await newuser.save()
+            res.status(200).json(jwt)
+        }
 
-            const newUser = new user({
-                uid,
-                email,
-                name,
-                phonenumber
-            })
-
-            newUser.save().then((user) => {
-                return token;   
-            }).catch((err) => {
-                console.log(err)
-                res.status(500).json({message:"Something went wrong"})
-            })
-        })
     } catch (error) {
         res.status(500).json({message:"Something went wrong"})
     }
+
+
+    console.log(usermain.uid)
+
 })
 
 
