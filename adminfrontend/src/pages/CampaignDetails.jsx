@@ -32,6 +32,7 @@ const CampaignDetails = () => {
 
   const handleDonate = async () => {
     setIsLoading(true);
+    // const formattedAmount = ethers.utils.parseUnits(amount, 18).toString();
 
     await donate({ id: state.pId, amount: amount });
 

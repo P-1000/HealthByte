@@ -12,6 +12,12 @@ import Funding from './pages/Funding';
 import Dashboard from './pages/Dashboard';
 import CreateCampaign from './pages/CreateCampaign';
 import CampaignDetails from './pages/CampaignDetails';
+import Ecom from './pages/Ecom';
+import ProductDetails from './pages/Product';
+import Cart from './pages/Cart';
+import Blog from './pages/Blog';
+import MealPlan from './pages/MealPlan';
+import Donate from './pages/Donate';
 
 function App() {
   return (
@@ -21,7 +27,13 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/funding" element={<Funding />} />
         <Route path="/newcampaign" element={<CreateCampaign />} />
-          <Route path="/campaign-details/:id" element={<CampaignDetails/>} />
+        <Route path="/campaign-details/:id" element={<CampaignDetails />} />
+        <Route path="/medico" element={<Ecom />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/medico/product/:id" element={<ProductDetails />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/meal" element={<MealPlan />} />
+        <Route path="/donate" element={<Donate />} />
       </Routes>
     </>
   )
