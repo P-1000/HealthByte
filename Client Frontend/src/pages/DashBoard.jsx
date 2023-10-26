@@ -119,7 +119,7 @@ const DashBoard = () => {
       {/* <h1 className="mt-12 ml-5 text-2xl ">
         Blogs : 
       </h1> */}
-       <BlogPost/>
+        {/*   <BlogPost/> */}
       </div>
     </div>
   );

@@ -5,4 +5,81 @@
 body{
     font-family: 'Onest', sans-serif;
 }
-
+/*
+  Based on TailwindCSS recommendations,
+  consider using classes instead of the `@apply` directive
+  @see https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction
+*/
+/* body {
+    @apply transition-[1s] m-0 p-0;
+    background: #ddd;
+    font-family: "Lato", sans-serif;
+  } */
+  .item {
+    
+    background: #fff;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  }
+  .item .img-box {
+   
+    -webkit-box-sizing: border-box;
+  }
+  .item .img-box img {
+  }
+  .details {
+    
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  .details h2 {
+    
+  }
+  .details h2 span {
+    
+  }
+  .details .price {
+    
+  }
+  label {
+    
+  }
+  ul {
+    
+    display: -webkit-flex;
+    display: -ms-flex;
+  }
+  ul li {
+    
+    list-style: none;
+  }
+  ul.colors li {
+    @apply w-4 h-4 cursor-pointer rounded-[50%] hover:shadow-[1px_1px_1px_rgba(0,0,0,0.5)];
+  }
+  ul.colors li:nth-child(1) {
+    background: #9f8a42;
+  }
+  ul.colors li:nth-child(2) {
+    background: #acaea9;
+  }
+  ul.colors li:nth-child(3) {
+    background: #cd7f32;
+  }
+  a {
+    
+    /* background: #333; */
+  }
+  a:hover {
+    background: #666;
+  }
+  .item:hover .details {
+    
+  }
+  .item:hover .img-box {
+    
+  }
+  .item:hover h2,
+  .item:hover .price {
+    @apply pt-5 pb-0;
+  }
+  
