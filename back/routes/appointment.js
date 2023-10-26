@@ -3,6 +3,7 @@ import User from "../models/user.js"
 import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import Appsc from "../models/App.js";
+import Doctor from "../models/doctor.js";
 
 
 const router = express.Router()
@@ -56,6 +57,55 @@ router.post("/login", async (req, res) => {
         res.status(500).json({ message: "Something went wrong" });
     }
 });
+
+
+router.get("/myuserapps/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        const myapps = await Appsc.find({ userid: id });
+        // myapps = myapps.filter((app) => {
+        //     const today = new Date();
+        //     const appDate = new Date(app.data);
+        //     return appDate.getTime() >= today.getTime();
+        // });
+        res.status(200).json(myapps);
+    } catch (error) {
+        res.status(500).json({ message: "Something went wrong" });
+    }
+})
+
+router.get("/mydocapps/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        const myapps = await Appsc.find({ docid: id });
+        // myapps = myapps.filter((app) => {
+        //     const today = new Date();
+        //     const appDate = new Date(app.data);
+        //     return appDate.getTime() >= today.getTime();
+        // });
+        res.status(200).json(myapps);
+    } catch (error) {
+        res.status(500).json({ message: "Something went wrong" });
+    }
+})
+
+// router.get("/doctors/:query", async (req, res) => {
+//     const 
+// });
+
+
+
+router.post('/doctorsignup', async (req, res) => {
+    const { data } = req.body;
+    try {
+      const newDoctor = new Doctor(data);
+      await newDoctor.save();
+      res.status(201).json({ message: 'Doctor registered successfully' });
+    } catch (error) {
+      res.status(500).json({ message: 'Something went wrong' });
+    }
+  })
+
 
 
 
