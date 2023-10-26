@@ -1,13 +1,16 @@
 import express from "express"
 import rateLimit from "express-rate-limit"
-import {  sentOTP } from "../controllers/authcontroller.js"
 
 
 const router = express.Router()
 
-// router.post("/signup/user" ,  signup );
-// router.post("/login/user" , login );
 
-router.post('/getOTP/user' ,  sentOTP );
+
+router.get('/' , (req,res) => {
+    res.send("Auth Routes")
+}
+)
+
+
 
 export default router;

@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import authroutes from "./routes/authroutes.js";
+import appointmentment from "./routes/appointment.js";
 
 
 const app = express();
@@ -24,6 +25,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth',authroutes );
+
+app.use('/api/book', appointmentment);
 
 
 app.listen(3000, () => {

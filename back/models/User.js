@@ -39,6 +39,10 @@ const userSchema = new mongoose.Schema({
     otp: {
         type: Number,
     },
+    userid:{
+        type: String,
+    },
+    
 
 },{timestamps:true});
 
