@@ -10,17 +10,34 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@iconify/icons-heroicons-solid": "^1.2.6",
+    "@react-icons/all-files": "^4.1.0",
+    "axios": "^1.5.1",
+    "firebase": "^10.5.0",
+    "heroicons": "^2.0.18",
+    "heroicons-react": "^1.4.1",
+    "otp-input-react": "^0.3.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.11.0",
+    "react-otp-input": "^3.1.0",
+    "react-phone-input-2": "^2.15.1",
+    "react-router-dom": "^6.17.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.16",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.4",
     "vite": "^4.4.5"
   }
 }
