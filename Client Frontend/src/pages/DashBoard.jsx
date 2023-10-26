@@ -4,6 +4,7 @@ import { FaChevronRight } from "react-icons/fa";
 import BrowseByCon from "../components/HealthCondition/BrowseByCon";
 import { Link, useNavigate } from "react-router-dom";
 import BlogPost from "../components/HomeComp/Blog";
+import TabRem from "../components/HomeComp/TabRem";
 
 
 const DashBoard = () => {
@@ -111,6 +112,11 @@ const DashBoard = () => {
               </Link>
             </div>
           </div>
+        </div>
+        <div>
+          <TabRem/>
+          <TabRem/>
+          <TabRem/>
         </div>
       </div>
       <BrowseByCon />

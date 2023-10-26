@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMdSchool } from "react-icons/io";
 import { SiTransportforlondon } from "react-icons/si";
 import { FaLocationArrow } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import { AiOutlineStar } from "react-icons/ai";
 import { MdEventAvailable } from "react-icons/md";
+import { useParams } from "react-router-dom";
 import Modal from "./Modal";
 
 const DoctorProfile = () => {
+
   const appointmentAvailability = {
     Sunday: {
       available: true,
@@ -38,6 +40,21 @@ const DoctorProfile = () => {
       timeSlots: [],
     },
   };
+  const { id } = useParams();
+
+  const [doctor, setDoctor] = useState({});
+
+  useEffect(() => {
+    const fetchDoctor = async () => {
+      const res = await fetch(`http://localhost:3000/api/book/doctors/${id}`);
+      const data = await res.json();
+      setDoctor(data);
+      console.log(data);
+    }
+    fetchDoctor();
+  }, [id]);
+
+
 
   const [showOnlineAvailability, setShowOnlineAvailability] = useState(false);
 
@@ -62,10 +79,10 @@ const DoctorProfile = () => {
               <div className="absolute z-30 flex items-center justify-around gap-10 ">
                 <div className="font-semibold align-middle px-12 py-14">
                   <h1 className="text-2xl font-medium   text-white capitalize lg:text-4xl dark:text-white">
-                    Dr. Tony Chopper
+                   {doctor.name}
                   </h1>
                   <h1 className="text-xl font-normal  text-white/70 capitalize lg:text-sm my-2 dark:text-white">
-                    Dermatologist | 10 years of experience
+                   {doctor.speciality} | {doctor.experience} years of experience
                   </h1>
                   <div className="flex gap-6 ">
                     <div className="flex gap-2 place-items-center py-4">
@@ -88,12 +105,7 @@ const DoctorProfile = () => {
                   </div>
                   <div className="w-6/12 py-1 mb-1">
                     <h1 className="inline-block text-white/90 text-sm font-normal">
-                      With over 15 years of experience, Dr. Martinez has worked
-                      at renowned dermatology clinics and hospitals, including
-                      Dermatology Excellence Center and Glowing Skin Clinic. Her
-                      expertise covers a wide range of dermatological
-                      conditions, from acne and psoriasis to skin cancer
-                      screenings.
+               {doctor.bio}
                     </h1>
                   </div>
                   <div className="flex gap-5 pb-5 mt-2">
@@ -119,7 +131,7 @@ const DoctorProfile = () => {
                     >
                       Book Video Consultation
                     </button> */}
-                    <Modal/>
+                    <Modal keyid={id}/>
                     <button className="bg-white border delay-100 duration-300 ease-in-out hover:px-8 text-black transition-all hover:bg-black hover:text-white  px-4 py-2 rounded-md">
                       Book Hospital Visit
                     </button>
@@ -128,7 +140,7 @@ const DoctorProfile = () => {
                 <div></div>
               </div>
               <img
-                src="https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={doctor.profilePic}
                 alt="backgrop poster"
                 className="w-full h-full left-96 object-contain object-center rounded-lg absolute scale-125 translate-y-10"
                 style={{ left: "310px" }}
