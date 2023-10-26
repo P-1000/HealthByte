@@ -93,8 +93,8 @@ const MainApp = () => {
             </div>
           </div>
         </div>
-        <div className="w-11/12 p-2">
-          <TeamSection doctors={searchResults.length > 0 ? searchResults : dummyData} />
+        <div className="w-11/12  p-2">
+          <TeamSection  />
         </div>
       </div>
     </div>

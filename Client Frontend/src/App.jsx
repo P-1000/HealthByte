@@ -9,6 +9,7 @@ import Ecommerce from "./pages/Ecommerce";
 import Login from "./pages/Login";
 import { useLocation } from "react-router-dom";
 import ProfilePage from "./pages/Profile";
+import Donate from "./pages/Donate";
 
 function App() {
   const location = useLocation();
@@ -25,6 +26,7 @@ function App() {
             <Route path="/doctor/:id" element={<Doctor />} />
             <Route path="/buy-medico" element={<Ecommerce />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/bloodbro" element={<Donate />} />
           </Routes>
         </div>
       {/* </Router> */}

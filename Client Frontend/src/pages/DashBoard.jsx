@@ -4,6 +4,7 @@ import { FaChevronRight } from "react-icons/fa";
 import BrowseByCon from "../components/HealthCondition/BrowseByCon";
 import { Link, useNavigate } from "react-router-dom";
 import BlogPost from "../components/HomeComp/Blog";
+import TabRem from "../components/HomeComp/TabRem";
 
 
 const DashBoard = () => {
@@ -112,6 +113,11 @@ const DashBoard = () => {
             </div>
           </div>
         </div>
+        <div>
+          <TabRem/>
+          <TabRem/>
+          <TabRem/>
+        </div>
       </div>
       <BrowseByCon />
 
@@ -119,7 +125,7 @@ const DashBoard = () => {
       {/* <h1 className="mt-12 ml-5 text-2xl ">
         Blogs : 
       </h1> */}
-       <BlogPost/>
+        {/*   <BlogPost/> */}
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ export function SideBar() {
             </a>
 
             <a
-              href="/"
+              href="/home"
               className={`p-1.5 text-gray-500 focus:outline-none transition-colors duration-200 rounded-lg ${
                 location.pathname === "/"
                   ? "p-1.5 text-blue-500 transition-colors duration-200 bg-blue-100 rounded-lg dark:text-blue-400 dark:bg-gray-800"

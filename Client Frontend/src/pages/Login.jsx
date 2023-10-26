@@ -147,6 +147,8 @@ const Login = () => {
   const [showOtp, setShowOtp] = useState(false);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(false);
+  const [email,setEmail] = useState("");
+  const [name,setName] = useState("");
 
   function onCaptchaVerify() {
     if (!window.RecaptchaVerifier) {
@@ -192,9 +194,10 @@ const Login = () => {
         const user = result.user;
         setUser(user);
         console.log(user.uid);
-        const usermain = user;
+        // const usermain = user;
+        const uid = user.uid;
         await axios
-          .post("http://localhost:3000/api/book/login", { usermain })
+          .post("http://localhost:3000/api/book/login", { usermain: { email,name,mobile , uid}})
           .then((res) => {
             console.log(res);
           })
@@ -209,6 +212,17 @@ const Login = () => {
         toast.error(error.message);
       });
   }
+
+ 
+
+
+function handleChange(event) {
+  setEmail(event.target.value);
+}
+function handleChangeName(event){
+  setName(event.target.value)
+}
+   
 
   return (
     <div className={`d-flex justify-content-center `}>
@@ -265,6 +279,7 @@ const Login = () => {
                     <div>
                       <h1 className="mt-10  text-xl">UserName</h1>
                       <input
+                      onChange={handleChangeName}
                         type="text"
                         placeholder="JohnDoe"
                         className="block w-96 h-14 px-4 py-2  text-gray-700  bg-transparent border
@@ -275,6 +290,7 @@ const Login = () => {
                     <div>
                       <h1 className="mt-10 text-xl">Phone-no</h1>
                       <input
+                      onChange={handleChange}
                         type="text"
                         placeholder="email"
                         className="block w-96 h-14 px-4 py-2  text-gray-700  bg-transparent border
