@@ -32,7 +32,8 @@ router.post('/newapp' , async(req,res) => {
 )
 
 router.post("/login", async (req, res) => {
-    const { usermain } = req.body;
+    const { usermain,name,email } = req.body;
+    console.log(usermain)
     try {
         if (!usermain.uid) {
             return res.status(400).json({ message: "All fields are required" }); // Use 'return' to exit the function after sending a response
