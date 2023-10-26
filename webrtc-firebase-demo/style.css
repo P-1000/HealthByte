@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato&family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Syne Mono', monospace;
+  /* font-family: 'Onest', sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin: 10px;
+  margin-top: 60px;
+  background: #F8F9F9;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #00000050;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* -----------Video------------------ */
+
+video {
+  background: #e2e2e250;
+  border-radius: 8px;
+}
+
+.videos {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  width: 700px;
+  margin: 10px;
+  margin-left: 0;
+  position: relative;
+}
+
+#local {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+#local span{
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+#webcamVideo {
+  width: 140px;
+  height: 105px;
+  background-color: #e2e2e2d9;
+}
+
+#remoteVideo {
+  width: 700px;
+  /* height: 415px; */
+  height: 525px;
+}
+
+.btmNav button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #00000050;
+}
+
+.btmNav button:hover {
+  background: #00000060;
+}
+
+.btmNav button i {
+  color: #fff;
+}
+
+.btmNav button:last-child {
+  background: #ff4e4e;
+}
+
+.btmNav button:last-child:hover {
+  background: #eb4949;
+}
+
+/* --------------------SideBar-------------------------- */
+
+.sideBar{
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.sideDetails {
+  /* height: 100%; */
+  height: 415px;
+  overflow-y: scroll;
+  width: 378px;
+}
+
+.sideDetails::-webkit-scrollbar {
+  width: 0;
+}
+
+.sideDetails:hover::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sideDetails::-webkit-scrollbar-thumb {
+  background-color: #00000050;
+  border-radius: 10px;
+}
+
+.sideDetails::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.sideDetails h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #b8b8b8;
+}
+
+.info label {
+  margin: 4px;
+}
+
+.info label span {
+  font-weight: 600;
+}
+
+.complaints li {
+  margin: 4px;
+  margin-left: 22px;
+}
+
+.complaints ol {
+  list-style: disc;
+}
+
+.sideNav span {
+  cursor: pointer;
+  padding: 2px 10px;
+}
+
+/* .sideNav span.active {
+  border: 1px solid blue;
+  font-weight: bold;
+} */
+
+.img {
+  background-color: #e2e2e29d;
+}
+
+.details h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.details h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.bar.active {
+  background: #fd9595;
+  width: 80%;
+  height: 4px;
+  border-radius: 4px 4px 0 0;
+}
+
+.bar {
+  padding: 0 !important;
+}
+
+.sideNav div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.medicineName span:last-child, .medicineDosage span:last-child {
+  height: 6px;
+  border: 1px solid #d3d2d2d0;
+  border-radius: 6px;
+}
+
+.preInput{
+  border: 1px solid red;
+}
+
+.inputParent{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 0;
+  width: 248px;
+}
+
+.inputParent div{
+  width: 100px;
+  margin: 0 12px;
+}
+
+.formParent{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
