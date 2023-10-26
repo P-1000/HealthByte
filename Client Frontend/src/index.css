@@ -5,4 +5,82 @@
 body{
     font-family: 'Onest', sans-serif;
 }
-
+/*
+  Based on TailwindCSS recommendations,
+  consider using classes instead of the `@apply` directive
+  @see https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction
+*/
+body {
+    @apply transition-[1s] m-0 p-0;
+    background: #ddd;
+    font-family: "Lato", sans-serif;
+  }
+  .item {
+    @apply absolute -translate-x-2/4 -translate-y-2/4 w-60 h-[320px] shadow-[0_5px_15px_rgba(0,0,0,0.25)] overflow-hidden transition-[1s] rounded-xl left-2/4 top-2/4;
+    background: #fff;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  }
+  .item .img-box {
+    @apply h-full  box-border transition-[1s];
+    -webkit-box-sizing: border-box;
+  }
+  .item .img-box img {
+    @apply block w-full transition-[1s] mx-auto my-0;
+  }
+  .details {
+    @apply absolute bottom-[-135px] w-full box-border shadow-[0_0_0_rgba(0,0,0,0)] transition-[1s] pt-0 p-2.5;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  .details h2 {
+    @apply w-full text-base m-0 pb-[25px] p-0;
+  }
+  .details h2 span {
+    @apply text-xs text-[#bbb] font-[normal];
+  }
+  .details .price {
+    @apply absolute font-[bold] text-xl right-[25px] top-0;
+  }
+  label {
+    @apply block font-[bold] text-sm mt-[5px];
+  }
+  ul {
+    @apply flex m-0 p-0;
+    display: -webkit-flex;
+    display: -ms-flex;
+  }
+  ul li {
+    @apply text-xs font-[normal] text-[#bbb] transition-[0.7s] mt-[5px] mb-0 mx-[5px] hover:cursor-pointer hover:text-[#333] hover:transition-[0.7s] first:ml-0;
+    list-style: none;
+  }
+  ul.colors li {
+    @apply w-4 h-4 cursor-pointer rounded-[50%] hover:shadow-[1px_1px_1px_rgba(0,0,0,0.5)];
+  }
+  ul.colors li:nth-child(1) {
+    background: #9f8a42;
+  }
+  ul.colors li:nth-child(2) {
+    background: #acaea9;
+  }
+  ul.colors li:nth-child(3) {
+    background: #cd7f32;
+  }
+  a {
+    @apply block text-white text-center no-underline transition-[1s] mt-[15px] mb-0 mx-0 p-[5px] rounded-[5px] hover:transition-[1s];
+    background: #333;
+  }
+  a:hover {
+    background: #666;
+  }
+  .item:hover .details {
+    @apply overflow-visible shadow-[0_5px_15px_rgba(0,0,0,0.25)] transition-[1s] bottom-0;
+  }
+  .item:hover .img-box {
+    @apply absolute transition-[3s] bottom-[60px];
+  }
+  .item:hover h2,
+  .item:hover .price {
+    @apply pt-5 pb-0;
+  }
+  
