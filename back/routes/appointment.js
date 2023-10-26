@@ -140,6 +140,80 @@ router.post('/doctorsignup', async (req, res) => {
   
 
 
+router.get('/doctors', async (req, res) => {
+    try {
+      const doctors = await Doctor.find();
+      res.status(200).json(doctors);
+    } catch (error) {
+      res.status(500).json({ message: 'Something went wrong' });
+    }
+  }
+    );
+
+router.get('/doctors/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+      const doctor = await Doctor.findById(id);
+      res.status(200).json(doctor);
+    } catch (error) {
+      res.status(500).json({ message: 'Something went wrong' });
+    }
+  }
+    );
+
+
+    router.get('/doctors/:query', async (req, res) => {
+        const { query } = req.params;
+        try {
+          const fuzzyQuery = new RegExp(escapeRegex(query), 'i');
+      
+          const doctors = await Doctor.find({ $or: [
+            { name: { $regex: fuzzyQuery } },
+            { speciality: { $regex: fuzzyQuery } },
+          ] });
+      
+          res.status(200).json(doctors);
+        } catch (error) {
+          res.status(500).json({ message: 'Something went wrong' });
+        }
+      });
+      
+      function escapeRegex(text) {
+        return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+      }
+
+
+      router.get('/patient/:id', async (req, res) => {
+        try {
+          const patients = await User.find({ userid: req.params.id});
+          res.status(200).json(patients);
+        } catch (error) {
+          res.status(500).json({ message: 'Something went wrong' });
+        }
+      }
+        );
+
+
+        router.get('/doctor/spec/:query', async (req, res) => {
+            const { query } = req.params;
+            try {
+              const fuzzyQuery = new RegExp(escapeRegex(query), 'i');
+          
+              const doctors = await Doctor.find({ $or: [
+                { speciality: { $regex: fuzzyQuery } },
+              ] });
+          
+              res.status(200).json(doctors);
+            } catch (error) {
+              res.status(500).json({ message: 'Something went wrong' });
+            }
+          });
+          
+
+
+      
+
+
 
 
 
