@@ -3,6 +3,7 @@ import React from "react";
 import { FaChevronRight } from "react-icons/fa";
 import BrowseByCon from "../components/HealthCondition/BrowseByCon";
 import { useNavigate } from "react-router-dom";
+import BlogPost from "../components/HomeComp/Blog";
 
 const DashBoard = () => {
   const navigate = useNavigate();
@@ -113,6 +114,13 @@ const DashBoard = () => {
         </div>
       </div>
       <BrowseByCon />
+
+      <div className="border mt-4 p-2 rounded-xl">
+      {/* <h1 className="mt-12 ml-5 text-2xl ">
+        Blogs : 
+      </h1> */}
+        <BlogPost/>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
-
+import axios from "axios";
 
 export default function Modal() {
   const [showModal, setShowModal] = useState(false);
@@ -48,6 +48,14 @@ export default function Modal() {
     // Add more date-specific slots as needed
   };
 
+
+  // send data to backend
+    const senddata = async (data) => {
+        const res = await axios.post("http://localhost:3000/api/book/newapp", {data})
+        console.log(res)
+    }
+
+
   // Function to handle saving changes and console the necessary data
   const handleSaveChanges = () => {
     // Replace the placeholders with actual patient ID and doctor ID
@@ -59,6 +67,9 @@ export default function Modal() {
     console.log("Selected Date:", selectedDate);
     console.log("Selected Slot:", selectedSlot);
     console.log("Selected Slot Price:", selectedSlotPrice);
+
+    senddata({patientId, doctorId, selectedDate, selectedSlot, selectedSlotPrice})
+
     setShowModal(false);
     toast.success("Slot Booked")
     setSelectedSlot(null); 
