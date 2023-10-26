@@ -63,11 +63,6 @@ router.get("/myuserapps/:id", async (req, res) => {
     const { id } = req.params;
     try {
         const myapps = await Appsc.find({ userid: id });
-        // myapps = myapps.filter((app) => {
-        //     const today = new Date();
-        //     const appDate = new Date(app.data);
-        //     return appDate.getTime() >= today.getTime();
-        // });
         res.status(200).json(myapps);
     } catch (error) {
         res.status(500).json({ message: "Something went wrong" });
