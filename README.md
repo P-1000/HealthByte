@@ -22,8 +22,8 @@ This telemedicine web application and patient management system will provide a c
 
 
 ## Blockchain-based fundraising for campaigns💰
-### 💁Info :- Allows fundraising for medical campaigns using blockchain technology for medically and poverty based patients.
-### Stack Used :-
+#### Info :- Allows fundraising for medical campaigns using blockchain technology for medically and poverty based patients.
+#### Stack Used :-
 
 <br/>
 
@@ -32,6 +32,46 @@ This telemedicine web application and patient management system will provide a c
 <img src="https://cdn-icons-png.flaticon.com/512/4125/4125334.png" width="40" height="40"/> &nbsp;&nbsp;Ethereum &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/metamask-icon.png" alt="webrtc" width="40" height="40"/> &nbsp;&nbsp;MetaMask&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://seeklogo.com/images/H/hardhat-logo-888739EBB4-seeklogo.com.png" alt="webrtc" width="65" height="40"/> &nbsp;&nbsp;HardHat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://icons-for-free.com/iconfiles/png/512/vscode+icons+type+solidity-1324451490099123586.png" alt="webrtc" width="40" height="40"/> &nbsp;&nbsp;Solidity &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+## Doctor and patient booking system👨‍⚕️
+#### 💁Info :- Allows fundraising for medical campaigns using blockchain technology for medically and poverty based patients.
+#### Stack Used :-
+
+<br/>
+
+
+
+<img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" width="40" height="40"/> &nbsp;&nbsp;React jsx &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://as1.ftcdn.net/v2/jpg/05/83/61/64/1000_F_583616420_cyNZmksm5h2x5vgcKGmRjnivfmrgnSTb.png" alt="webrtc" width="40" height="40"/> &nbsp;&nbsp;Node-JS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://user-images.githubusercontent.com/25181517/202896760-337261ed-ee92-4979-84c4-d4b829c7355d.png" alt="webrtc" width="40" height="40"/> &nbsp;&nbsp;TailwindCSS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://brandslogos.com/wp-content/uploads/thumbs/redux-logo-vector.svg" alt="webrtc" width="40" height="40"/> &nbsp;&nbsp;Redux
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://cdn.iconscout.com/icon/free/png-256/free-mongodb-3629020-3030245.png" alt="webrtc" width="40" height="40"/> &nbsp;&nbsp;Mongo DB &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://cdn-icons-png.flaticon.com/512/919/919853.png" alt="webrtc" width="40" height="40"/> &nbsp;&nbsp;Docker &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+## Video conferencing system 📹
+#### 💁Info :- Allows fundraising for medical campaigns using blockchain technology for medically and poverty based patients.
+#### Stack Used :-
+
+<br/>
+
+
+
+<img src="https://webrtc.github.io/webrtc-org/assets/images/webrtc-logo-vert-retro-255x305.png" width="40" height="40"/> &nbsp;&nbsp;WebRTC &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://firebase.google.com/static/downloads/brand-guidelines/PNG/logo-logomark.png" alt="webrtc" width="35" height="40"/> &nbsp;&nbsp;FireBase&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://static-00.iconduck.com/assets.00/socket-io-icon-2048x2046-tx88w4en.png" alt="webrtc" width="40" height="40"/> &nbsp;&nbsp;Socket.io &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+## Languages Used📹
+#### Stack Used :-
+
+<br/>
+
+
+
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" width="40" height="40"/> &nbsp;&nbsp;JavaScript &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 
@@ -41,8 +81,7 @@ This telemedicine web application and patient management system will provide a c
 
 
 
-
-->Online appointment scheduling <br/>
+<!---Online appointment scheduling <br/>
 ->Secure video consultations <br/>
 ->Blockchain based multi factor authentication <br/>
 ->Secure storage of medical records <br/>
@@ -58,21 +97,6 @@ This telemedicine web application and patient management system will provide a c
 ->Video conferencing system <br/>
 ->E-commerce application for medicines <br/>
 ->Blood donation portal <br/>
-->Blog posts for the medical community <br/>
-t
+->Blog posts for the medical community--->
 
-# TechStack Used
-<div style="display:flex;">
-  
 
-<img src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="webrtc" width="50" height="50"/>
-<img src="https://user-images.githubusercontent.com/25181517/202896760-337261ed-ee92-4979-84c4-d4b829c7355d.png" alt="webrtc" width="50" height="50"/>
-<img src="https://user-images.githubusercontent.com/25181517/189716855-2c69ca7a-5149-4647-936d-780610911353.png" alt="webrtc" width="50" height="50"/>
-<img src="https://user-images.githubusercontent.com/25181517/187896150-cc1dcb12-d490-445c-8e4d-1275cd2388d6.png" alt="webrtc" width="50" height="50"/>
-<img src="https://user-images.githubusercontent.com/25181517/182884177-d48a8579-2cd0-447a-b9a6-ffc7cb02560e.png" alt="webrtc" width="50" height="50"/>
-<img src="https://user-images.githubusercontent.com/25181517/183896132-54262f2e-6d98-41e3-8888-e40ab5a17326.png" alt="webrtc" width="50" height="50"/>
-<img src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" alt="webrtc" width="50" height="50"/>
-<img src="https://user-images.githubusercontent.com/25181517/183859966-a3462d8d-1bc7-4880-b353-e2cbed900ed6.png" alt="webrtc" width="50" height="50"/>
-<img src="https://docs.soliditylang.org/en/latest/_images/solidity_logo.svg" alt="webrtc" width="50" height="50"/>
-<img src="https://user-images.githubusercontent.com/25181517/192108891-d86b6220-e232-423a-bf5f-90903e6887c3.png" alt="webrtc" width="50" height="50"/>
-</div>
