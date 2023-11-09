@@ -1,0 +1,12 @@
+v: 0
+micros:
+  - name: VideoCall
+    src: ./
+    # engine: python3.9
+    engine: nodejs16
+    primary: true
+    # dev: uvicorn main:app --reload
+    dev: npm run dev
+
+    public_routes:
+      - "/*"
